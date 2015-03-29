@@ -1,3 +1,19 @@
+THIS PROJECT IS CANCELLED.
+
+I have stopped all development in the D language.  This repository
+will remain up until December 31, 2015, in case someone else would
+like to fork it and continue on.  After that it will be deleted.
+
+This code has finished being [transliterated to
+Java](https://github.com/klamonte/jexer).  During that process it was
+refactored, a number of bugs were fixed, the API was cleaned up, and a
+some wishlist features were brought forward.  Anyone wishing to build
+a D-language Turbo Vision lookalike is recommended to start with
+transliterating the Java version (Jexer) back into D rather than work
+with this code.
+
+
+
 D Text User Interface library
 =============================
 
@@ -20,8 +36,8 @@ Three platforms are available:
 
 * As an X11-style terminal communicating over a non-blocking socket.
 
-Contributions towards supporting other platforms would be *greatly*
-appreciated.
+See the file demo1.d for many example usages.
+
 
 
 License
@@ -32,40 +48,6 @@ version 3 or greater.  See the file COPYING for the full license text,
 which includes both the GPL v3 and the LGPL supplemental terms.
 
 
-Usage
------
-
-The library is currently under initial development, usage patterns are
-still being worked on.  Generally the goal will be to build
-applications somewhat as follows:
-
-```D
-import tui;
-
-public class MyApplication : TApplication {
-
-    this() {
-        super();
-
-        // Create an editor window that has support for
-        // copy/paste, search text, arrow keys, horizontal
-        // and vertical scrollbar, etc.
-        addEditor();
-
-        // Create standard menus for File and Window
-        addFileMenu();
-        addWindowMenu();
-    }
-}
-
-void main(string [] args) {
-    MyApplication app = new MyApplication();
-    app.run();
-}
-```
-
-See the file demo1.d for many example usages.
-
 
 Acknowledgements
 ----------------
@@ -73,59 +55,3 @@ Acknowledgements
 Thanks go out to Adam Ruppe for [his terminal.d class](
 https://raw.github.com/adamdruppe/misc-stuff-including-D-programming-language-web-stuff/master/terminal.d)
 which greatly accelerated support for the Win32 console.
-
-
-Roadmap
--------
-
-This is a work in progress.  Many tasks remain before calling this
-version 1.0:
-
-0.0.1:
-
-- Bugs
-  - TSubMenu keyboard mnemonic not working
-  - kbDel assertion failure in TMenu (MID_CLEAR)
-
-0.0.2:
-
-- TEditor
-  - Word wrap
-  - Forward/backward word
-  - Search
-  - Replace
-  - Cut/Copy/Paste
-
-0.0.3:
-
-- ECMATerminal
-  - Mouse 1006 mode parsing
-  - Win32 support (used for reading/writing sockets)
-- Bugs
-  - TDirectoryList cannot be navigated only with keyboard
-  - TTreeView cannot be navigated only with keyboard
-  - RangeViolation after dragging scrollbar up/down
-
-Wishlist features (2.0):
-
-- TTerminal
-  - Handle resize events (pass to child process)
-  - xterm mouse handling
-- TWindow
-  - "Smart placement" for new windows
-- Screen
-  - Allow complex characters in putCharXY() and detect them in putStrXY().
-- TComboBox
-- TListBox
-- TSpinner
-- TCalendar widget
-- TColorPicker widget
-- Drag and drop
-  - TEditor
-  - TField
-  - TText
-  - TTerminal
-  - TComboBox
-- GTKBackend (use GtkD)
-- ECMABackend
-  - libgpm support
